@@ -1,0 +1,20 @@
+{
+  "name": "dictionary-server",
+  "version": "1.0.0",
+  "description": "A simple containerized node.js server that implements a dictionary API server.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadAbr/itog-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VadAbr/itog-back/issues"
+  },
+  "homepage": "https://github.com/VadAbr/itog-back#readme"
+}
