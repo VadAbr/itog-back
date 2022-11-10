@@ -5,13 +5,21 @@ var url = require('url');
 
 var dictionary = null;
 
+function getMultipleRandom(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+    return shuffled.slice(0, num);
+}
+
 var dictionaryHandler = (request, response) => {
     var u = url.parse(request.url);
 
     if (u.pathname == '/readyz') {
         if (dictionary) {
+            const randomWordArray = getMultipleRandom(Object.keys(dictionary), 9)
+
             response.writeHead(200);
-            response.end('OK');
+            response.end(JSON.stringify({data:randomWordArray}))
         } else {
             response.writeHead(404);
             response.end('Not Loaded');
