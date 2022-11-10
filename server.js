@@ -84,7 +84,7 @@ downloadDictionary('https://raw.githubusercontent.com/adambom/dictionary/master/
 
 const server = http.createServer(dictionaryHandler);
 
-server.listen(8080, (err) => {  
+server.listen(process.env.PORT || 8080, (err) => {
   if (err) {
     return console.log('error starting server: ' + err);
   }
