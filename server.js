@@ -14,6 +14,8 @@ function getMultipleRandom(arr, num) {
 var dictionaryHandler = (request, response) => {
     var u = url.parse(request.url);
 
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
     if (u.pathname == '/readyz') {
         if (dictionary) {
             const randomWordArray = getMultipleRandom(Object.keys(dictionary), 9)
